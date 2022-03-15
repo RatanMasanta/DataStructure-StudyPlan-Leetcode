@@ -3,7 +3,7 @@ package com.masanta.ratan.leetcode.study.plan.data.structure.one;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.masanta.ratan.leetcode.study.plan.data.structure.one.PreOrderBinaryTraversal.TreeNode;
+
 
 public class InOrderBinaryTraversal {
 
