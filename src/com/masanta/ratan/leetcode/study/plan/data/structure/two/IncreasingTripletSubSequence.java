@@ -4,6 +4,7 @@ public class IncreasingTripletSubSequence {
 
 	public static void main(String[] args) {
 		System.out.println(increasingTriplet(new int[] {2,1,5,0,4,6}));
+		System.out.println(increasingTriplet(new int[] {8,7,6,7,5,8}));
 
 	}
 	
