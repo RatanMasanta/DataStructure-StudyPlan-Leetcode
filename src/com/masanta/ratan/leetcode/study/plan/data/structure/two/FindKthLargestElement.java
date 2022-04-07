@@ -12,6 +12,7 @@ public class FindKthLargestElement {
 		System.out.println(findKthLargest2(nums, 1));
 		System.out.println(findKthLargest3(nums, 2));
 		System.out.println(findKthLargest4(nums, 3));
+		System.out.println(findKthLargest(nums,6));
 
 	}
 	
@@ -142,5 +143,39 @@ public class FindKthLargestElement {
 		 * There is also worth mentioning the Blum-Floyd-Pratt-Rivest-Tarjan algorithm
 		 * that has a guaranteed O(N) running time.
 		 */
+	
+	/*
+	 * 
+	 * 	Fastest solution
+	 * 
+	 * 
+	 */
+	
+	public static int findKthLargest(int[] nums, int k) {
+        if(nums.length==1) return nums[0];
+        return Quick(nums,0,nums.length-1, k-1);
+    }
+    
+    public static int Quick(int[] nums, int start, int end, int k){
+        if(start>=end) return nums[start];
+        int i = start-1;
+        int j = end+1;
+        int pivot = nums[(start+end)/2];
+        
+        while(i<j){
+            i++; j--;
+            while(nums[i]>pivot) i++;
+            while(nums[j]<pivot) j--;
+            
+            if(i<j){
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+            }
+        }
+        
+        if(k<=j) return Quick(nums,start,j,k);
+        else return Quick(nums,j+1,end,k);
+    }
 
 }
