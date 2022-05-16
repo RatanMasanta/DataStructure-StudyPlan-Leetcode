@@ -7,6 +7,7 @@ public class PlusOne {
 	public static void main(String[] args) {
 		System.out.println(Arrays.toString(plusOne(new int[] {4,3,2,1,9,9,8})));
 		System.out.println(Arrays.toString(plusOne2(new int[] {4,3,2,1,9,9,8})));
+		System.out.println(Arrays.toString(plusOne3(new int[] {9,9,9,2,9})));
 
 	}
 
@@ -40,6 +41,19 @@ public class PlusOne {
 	    }
 	    digits[index]++;    // found the non 9 digit, just add 1
 	    return digits;
+	}
+	
+	public static int[] plusOne3(int[] digits) {
+		int carry = 1;
+	    for (int i = digits.length-1; i>= 0; i--) {
+	        digits[i] += carry;
+	        if (digits[i] <= 9) // early return 
+	            return digits;
+	        digits[i] = 0;
+	    }
+	    int[] ret = new int[digits.length+1];
+	    ret[0] = 1;
+	    return ret;
 	}
 
 }
