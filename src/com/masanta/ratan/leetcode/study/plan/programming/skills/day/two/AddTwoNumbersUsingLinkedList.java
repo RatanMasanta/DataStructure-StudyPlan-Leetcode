@@ -5,7 +5,7 @@ public class AddTwoNumbersUsingLinkedList {
 	public static void main(String[] args) {
 		ListNode one = new ListNode(2);
 		one.next = new ListNode(4);
-		one.next.next = new ListNode(6);
+		one.next.next = new ListNode(3);
 		ListNode two = new ListNode(5);
 		two.next = new ListNode(6);
 		two.next.next = new ListNode(4);
